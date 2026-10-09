@@ -13,7 +13,7 @@
         <div class="alert alert-{{ categoria }}" role="alert">{{ msg }}</div>
         {% endfor %}
         {% endwith %}
-        <form method="" action="{{ url_for('contato') }}" class="bg-body-tertiary p-4 rounded border border-secondary shadow-sm">
+        <form method="get" action="{{ url_for('contato') }}" class="bg-body-tertiary p-4 rounded border border-secondary shadow-sm">
           <div class="mb-3">
             <label for="nome" class="form-label text-info fw-bold">Nome / Username</label>
             <input type="text" class="form-control bg-dark border-secondary text-light" id="nome" name="nome" placeholder="Seu alias" required>
