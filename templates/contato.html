@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Contato{% endblock %}
+{% block content %}
+  <main class="container py-5 flex-grow-1">
+    <div class="text-center mb-5">
+      <h1 class="display-6 fw-bold text-light">Fale sobre seu projeto open source</h1>
+    </div>
+
+    <div class="row g-5 justify-content-center">
+      <div class="col-md-7">
+        {% with msgs = get_flashed_messages(with_categories=true) %}
+        {% for categoria, msg in msgs %}
+        <div class="alert alert-{{ categoria }}" role="alert">{{ msg }}</div>
+        {% endfor %}
+        {% endwith %}
+        <form method="" action="{{ url_for('contato') }}" class="bg-body-tertiary p-4 rounded border border-secondary shadow-sm">
+          <div class="mb-3">
+            <label for="nome" class="form-label text-info fw-bold">Nome / Username</label>
+            <input type="text" class="form-control bg-dark border-secondary text-light" id="nome" name="nome" placeholder="Seu alias" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label text-info fw-bold">E-mail</label>
+            <input type="email" class="form-control bg-dark border-secondary text-light" id="email" name="email" placeholder="usuario@dominio.com" required>
+          </div>
+          <div class="mb-4">
+            <label for="mensagem" class="form-label text-info fw-bold">Detalhes do projeto</label>
+            <textarea class="form-control bg-dark border-secondary text-light" id="mensagem" name="mensagem" rows="5" placeholder="Descreva seu projeto..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-info w-100 fw-bold">Enviar Mensagem</button>
+        </form>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="p-4 rounded border border-secondary bg-body-tertiary h-100 shadow-sm">
+          <h3 class="h5 text-info mb-4 border-bottom border-secondary pb-2">Canais da Comunidade</h3>
+          <ul class="list-unstyled text-secondary">
+            <li class="mb-3">
+              <strong class="text-light">Repositório Git:</strong><br> git.git.git.git
+            </li>
+            <li class="mb-3">
+              <strong class="text-light">Fórum / IRC:</strong><br> opensource
+            </li>
+            <li>
+              <strong class="text-light">Licença do Projeto:</strong><br> MIT
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

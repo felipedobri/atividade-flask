@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+  <main>
+    <section class="text-center py-5 bg-dark border-bottom border-secondary" style="background: radial-gradient(circle at center, rgb(26, 32, 38) 0%, rgb(15, 20, 25) 100%);">
+      <div class="container py-5">
+        <img src="{{ url_for('static', filename='imgs/openclipart-vectors-linux-2025130.svg') }}" alt="Tux" style="width: 150px;" class="mb-4">
+        <h1 class="display-4 fw-bold">O Poder do Código Aberto</h1>
+        <p class="lead w-75 mx-auto text-secondary mb-4">Liberdade para estudar, modificar e distribuir. Uma abordagem técnica e filosófica sobre como o ecossistema Linux transforma o desenvolvimento.</p>
+        
+
+        <button type="button" class="btn btn-outline-info px-4 py-2" data-bs-toggle="modal" data-bs-target="#infoModal">
+          Ver Manifesto <span class="badge bg-info text-dark ms-2">Novo</span> 
+        </button>
+      </div>
+    </section>
+
+
+    <section class="container py-5">
+      <h2 class="text-center mb-5 text-light">Pilares do Sistema</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-info shadow-sm bg-body-tertiary">
+            <div class="card-body">
+              <h3 class="card-title text-info h5">Kernel Linux</h3>
+              <p class="card-text text-secondary">O núcleo modular que gerencia recursos com eficiência. Totalmente customizável para atender desde servidores críticos até desktops de alto desempenho.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-info shadow-sm bg-body-tertiary">
+            <div class="card-body">
+              <h3 class="card-title text-info h5">Software Livre</h3>
+              <p class="card-text text-secondary">Garantia de transparência. O código fonte está disponível para auditoria, eliminando caixas pretas e promovendo segurança.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-info shadow-sm bg-body-tertiary">
+            <div class="card-body">
+              <h3 class="card-title text-info h5">Comunidade</h3>
+              <p class="card-text text-secondary">Desenvolvimento descentralizado liderado por milhares de colaboradores globais. O conhecimento é documentado e compartilhado livremente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark border-secondary">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title text-info" id="infoModalLabel">Filosofia Aberta</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-secondary">
+          Descubra como a transparência do código-fonte permite atingir o verdadeiro estado da arte na computação moderna.
+        </div>
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <a href="{{ url_for('sobre') }}" class="btn btn-info">Ler Mais</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

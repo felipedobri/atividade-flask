@@ -1,0 +1,35 @@
+/* style.css */
+:root {
+  --font-stack: 'Fira Code', 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-stack);
+}
+
+/* Transições customizadas cobradas pelo requisito de personalização */
+.navbar-brand span {
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover span {
+  color: var(--bs-info) !important;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link.active {
+  color: var(--bs-info) !important;
+  font-weight: bold;
+}

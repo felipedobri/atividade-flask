@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Sobre{% endblock %}
+{% block content %}
+  <main class="container py-5 flex-grow-1">
+    <div class="p-5 mb-5 bg-body-tertiary rounded-3 text-center border border-secondary shadow-sm">
+      <h1 class="display-5 fw-bold text-light">Filosofia GNU/Linux</h1>
+    </div>
+
+    <article class="mx-auto text-center text-secondary" style="max-width: 800px; line-height: 1.8;">
+      <h2 class="text-info mb-3">Muito mais que um sistema operacional</h2>
+      <p class="mb-5 fs-5">O movimento de código aberto baseia-se na premissa de que a tecnologia deve capacitar o usuário, e não restringi-lo. Ao fornecer acesso irrestrito ao código-fonte, o ecossistema permite otimizações profundas que softwares proprietários não conseguem igualar.</p>
+      
+      <h2 class="text-info mb-3">Controle e Performance</h2>
+      <p class="fs-5">Da estabilidade absoluta exigida em servidores corporativos até as distribuições focadas em extrair o máximo de performance do hardware moderno com escalonadores otimizados (como é o caso do CachyOS), a modularidade do sistema entrega controle absoluto. O usuário decide o que roda, como roda e quando atualiza, eliminando telemetria forçada e processos em segundo plano desnecessários.</p>
+    </article>
+  </main>
+{% endblock %}
