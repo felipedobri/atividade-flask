@@ -17,7 +17,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          {% for endpoint, label in [('index', 'Home'), ('sobre', 'Sobre'), ('contato', 'Contato')] %}
+          {% for endpoint, label in [('index', 'Home'), ('sobre', 'Sobre'), ('contato', 'Contato'), ('cadastro', 'Cadastro'), ('listar', 'Listar')] %}
           <li class="nav-item">
             <a class="nav-link {{ 'active' if request.endpoint == endpoint }}" href="{{ url_for(endpoint) }}">{{ label }}</a>
           </li>
@@ -26,6 +26,13 @@
       </div>
     </div>
   </nav>
+  <div class="container mt-3">
+    {% with msgs = get_flashed_messages(with_categories=true) %}
+    {% for categoria, msg in msgs %}
+    <div class="alert alert-{{ categoria }}" role="alert">{{ msg }}</div>
+    {% endfor %}
+    {% endwith %}
+  </div>
 
   {% block content %}{% endblock %}
 
