@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Listar{% endblock %}
+{% block content %}
+  <main class="container py-5 flex-grow-1">
+    <h1 class="display-6 fw-bold text-light mb-4 text-center">Registros</h1>
+    {% if registros %}
+    <div class="table-responsive">
+      <table class="table table-dark table-striped align-middle">
+        <thead>
+          <tr><th>ID</th><th>Nome</th><th>E-mail</th><th>Mensagem</th><th>Criado em</th></tr>
+        </thead>
+        <tbody>
+          {% for r in registros %}
+          <tr>
+            <td>{{ r.id }}</td>
+            <td>{{ r.nome }}</td>
+            <td>{{ r.email }}</td>
+            <td>{{ r.mensagem }}</td>
+            <td>{{ r.criado_em.strftime('%d/%m/%Y %H:%M') }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="text-center text-secondary">Nenhum registro cadastrado ainda.</p>
+    {% endif %}
+  </main>
+{% endblock %}
